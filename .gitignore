@@ -19,5 +19,5 @@ nosetests.xml
 coverage.xml
 *.hypothesis/
 !src/__pycache__/
-!tests/
+tests/
 .env

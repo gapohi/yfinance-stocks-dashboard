@@ -4,10 +4,7 @@ This project retrieves stock data from Yahoo Finance, stores it in MongoDB, and 
 
 ## Disclaimer on Financial Decisions
 
-The use of this software and the provided data should not be considered as financial advice. 
-No responsibility is assumed for any financial decisions made based on the data or results 
-obtained from the software. Users are responsible for conducting their own research and making 
-informed decisions.
+The use of this software and the provided data should not be considered as financial advice. No responsibility is assumed for any financial decisions made based on the data or results obtained from the software. Users are responsible for conducting their own research and making informed decisions.
 
 ## Directory Structure
 
@@ -42,7 +39,7 @@ This project was developed using Python version 3.11.5.
 
 1. Clone the repository to your local machine:
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/gapohi/yfinance-stocks-dashboard.git
 ```
 
 2. Navigate to the repository directory:
