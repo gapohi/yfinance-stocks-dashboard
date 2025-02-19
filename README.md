@@ -33,7 +33,7 @@ The following libraries are required to run this project:
 *   `requests`
 *   `yfinance`
 
-This project was developed using Python version 3.11.5.
+This project was developed using Python version 3.11.5 and MongoDB 8.0.4.
 
 ## Installation
 
