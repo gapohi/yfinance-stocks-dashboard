@@ -30,7 +30,8 @@ def main():
         print('Retrieving and inserting stock data into MongoDB...')
         extract_and_insert_data(tickers)
         print('Launching the Dash app to display the stock dashboard...')
-        dash_app()
+        app = dash_app()
+        app.run_server(debug=False)
     except Exception as e:
         print(f"An error occurred: {e}")
 

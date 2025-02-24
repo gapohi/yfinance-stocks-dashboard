@@ -264,4 +264,4 @@ def dash_app():
     ])
 
     ## running the app
-    app.run_server(debug=True)
+    return app

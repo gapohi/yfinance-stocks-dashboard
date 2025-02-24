@@ -2,6 +2,8 @@
 
 This project retrieves stock data from Yahoo Finance, stores it in MongoDB, and visualizes it using a Dash dashboard.  
 
+![image](https://github.com/user-attachments/assets/83cac1b9-4d5d-4f7d-972b-76db2eec69a5)
+
 ## Disclaimer on Financial Decisions
 
 The use of this software and the provided data should not be considered as financial advice. No responsibility is assumed for any financial decisions made based on the data or results obtained from the software. Users are responsible for conducting their own research and making informed decisions.

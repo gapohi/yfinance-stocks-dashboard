@@ -62,20 +62,21 @@ def create_document(ticker, usd_to_eur):
         data = yf.download(ticker, period="10d", interval="1d")
 
         ## close prices for the last 5 days in eur
-        # check if there is enough data to extract the required number of close prices
-        if len(data) >= 5: 
-            # if there is enough data, take the last 5 closing prices and round them to two decimal places
-            close_prices = data['Close'].iloc[-5:].astype(float).round(2).tolist()
-        else:
-            # if there is not enough data, fill in the missing values with None
-            # for each of the last 5 days, try to get a price, otherwise use None if there's not enough data
-            close_prices = [
-            round(float(data['Close'].iloc[-i]), 2) if len(data) > i else None
-            for i in range(1, 6)
-        ]
-        # convert the close prices from USD to EUR, rounding each price to two decimal places
+        ## get the last 5 closing prices, filling missing values with None if there is not enough data
+        close_prices = (
+            data['Close']
+            .astype(float)
+            .round(2)
+            .reindex(data.index[-5:], fill_value=None)
+            .to_numpy()
+            .flatten()
+            .tolist()
+        )
+
+        ## convert prices from usd to eur, rounding to two decimal places and handling None values
         close_prices_eur = [round(price / usd_to_eur, 2) if price is not None else None for price in close_prices]
-        # unpack the converted close prices into individual variables
+
+        ## unpack the converted prices into individual variables
         close_today_eur, close_yesterday_eur, close_2_eur, close_3_eur, close_4_eur = close_prices_eur
 
         ## price change % from yesterday and moving average from last 5 days
@@ -90,11 +91,17 @@ def create_document(ticker, usd_to_eur):
         else:
             open_today_eur = low_today_eur = high_today_eur = None
 
-        ## volume from last 5 days (same way as price)
-        if len(data) >= 5:
-            volume_values = data['Volume'].iloc[-5:].astype(int).tolist()
-        else:
-            volume_values = [int(data['Volume'].iloc[-i]) if len(data) > i else None for i in range(1, 6)]
+        ## get the last 5 volume values, filling missing values with None if there is not enough data
+        volume_values = (
+            data['Volume']
+            .astype(float)
+            .reindex(data.index[-5:], fill_value=None)
+            .to_numpy()
+            .flatten()
+            .tolist()
+        )
+
+        ## unpack the volume values into individual variables
         today_volume, yesterday_volume, volume_2, volume_3, volume_4 = volume_values
 
         ## volume change % from yesterday
