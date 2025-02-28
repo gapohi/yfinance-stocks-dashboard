@@ -2,6 +2,15 @@
 
 This project retrieves stock data from Yahoo Finance, stores it in MongoDB, and visualizes it using a Dash dashboard.  
 
+## Main Tools
+
+- `Python` (Main programming language for the application) -- 3.11.5
+- `MongoDB` (NoSQL database used for storing data) -- 8.0.4
+- `YFinance` (Python library to fetch stock data from Yahoo Finance) -- 0.2.54
+- `Dash` (Python library to build interactive dashboards) -- 2.18.2
+
+## Output Sample
+
 ![image](https://github.com/user-attachments/assets/83cac1b9-4d5d-4f7d-972b-76db2eec69a5)
 
 ## Disclaimer on Financial Decisions
@@ -25,17 +34,15 @@ yfinance-stocks-dashboard/
 
 ## Requirements
 
-The following libraries are required to run this project:
+The following Python libraries are required to run this project:
 
-*   `dash`
-*   `dash_table`
-*   `pandas`
-*   `plotly`
-*   `pymongo`
-*   `requests`
-*   `yfinance`
-
-This project was developed using Python version 3.11.5 and MongoDB 8.0.4.
+*   `dash` -- 2.18.2
+*   `dash_table` -- 5.0.0
+*   `pandas` -- 2.2.3
+*   `plotly` -- 5.9.0
+*   `pymongo` -- 4.11.1
+*   `requests` -- 2.31.0
+*   `yfinance` -- 0.5.4
 
 ## Installation
 
@@ -63,9 +70,7 @@ python main.py
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would 
-like to change.
-
-Please make sure to update tests as appropriate.
+like to change. Please make sure to update tests as appropriate.
 
 ## License
 
